@@ -1,320 +1,221 @@
-%------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-% Resume in Latex
-% Author : Shubham Mazumder
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-
-\documentclass[letterpaper,10pt]{article}
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{amsmath}
-\usepackage{soul}
-\input{glyphtounicode}
-\usepackage[margin=0.5in]{geometry}
-
-%----------FONT OPTIONS----------
-% Sans-serif Fonts
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault,light]{inter}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage{roboto}
-% \usepackage[sfdefault,medium]{InriaSans}
-\usepackage[default]{sourcesanspro}
-
-% Serif Fonts
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2024 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
 
-% -------------------------------------
-%----------PAGE SETUP------------------
-% -------------------------------------
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
+\moderncvcolor{orange}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
+% moderncv themes
+\moderncvstyle[]{contemporary}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+                                                   % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+% adjust the page margins
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+%\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+%\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
 
-% Adjust margins
-% \addtolength{\oddsidemargin}{0.5pt}
-% \addtolength{\evensidemargin}{0.5pt}
-% \addtolength{\textwidth}{0.9in}
-% \addtolength{\topmargin}{-0.6in}
-% \addtolength{\textheight}{1.6in}
+% the 'contemporary' style allows to append additional elements to the head background; uncomment and customize if needed
+%\def\@moderncvheadBackground{
+%}
 
-% \addtolength{\oddsidemargin}{-.875in}
-% \addtolength{\evensidemargin}{-.875in}
-% \addtolength{\textwidth}{1.75in}
-% \addtolength{\topmargin}{-.875in}
-% \addtolength{\textheight}{1.75in}
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
 
-% URL style
-\urlstyle{same}
+  % you may also consider Fira Sans Light for a extra modern look
+  %\setsansfont[ItalicFont={Fira Sans Light Italic},%
+  %           BoldFont={Fira Sans},%
+  %           BoldItalicFont={Fira Sans Italic}]%
+  %           {Fira Sans Light}%
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
 
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-5pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+% personal data
+\name{Karl}{Solomon}
+\title{Embedded Software Engineer}                               % optional, remove / comment the line if not wanted
+\born{20 April 1995}                                 % optional, remove / comment the line if not wanted
+\address{San Jose, CA}{USA}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+1~(408)~623~7341}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{ksolomon@utexas.edu}                               % optional, remove / comment the line if not wanted
 
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+% Social icons
+\social[linkedin]{karlsolomon}                        % optional, remove / comment the line if not wanted
+\social[github]{karlsolomon}                              % optional, remove / comment the line if not wanted
 
-% ----------- Definitions -----------------------
-\def\spaceforrole{ }
-\definecolor{lightyellow}{cmyk}{0.00, 0.05, 0.20, 0.00} % Highlights
-\sethlcolor{lightyellow} % Highlights
+\photo[64pt][2pt]{headshot_close.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 2pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 
-%--------------- Custom commands -----------------------
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
 
-\newcommand{\sectionspace}{
-\vspace{-20pt}
-}
-
-\newcommand{\subheadingtitlevspace}{
-\vspace{-3pt}
-}
-
-
-% Resume Item
-\newcommand{\resumeItem}[1]{
-  \item{
-    {#1 \vspace{-4pt}}
-  }
-}
-
-% Titles
-\newcommand{\titleItem}[1]{
-  % \textsl{\textbf{#1}}
-  \textbf{#1}
-}
-
-
-% Highlighting
-\newcommand{\highlight}[1]{
-  \textsl{\textbf{#1}}
-  % \hl{\textsl{\textbf{#1}}}
-  % \textbf{#1}
-  % \textsl{\hl{#1}}
-}
-
-% Resume Subheading
-\newcommand{\resumeSubheading}[4]{
-  \item
-     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}l@{}l}     
-      {#1} & \titleItem{#3} | {#2} & \textit{#4}\\
-    \end{tabular*}\vspace{-10pt}
-}
-
-% \newcommand{\resumeSubheading}[4]{
-%   \item
-%     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-%       \textbf{#1} & #2 \\
-%       \textit{#3} & \textit{#4} \\
-%     \end{tabular*}\vspace{-8pt}
-% }
-
-
-
-% Resume Sub-sub heading
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{#1} & \textit{#2} \\
-    \end{tabular*}\vspace{-2pt}
-}
-
-% Resume Project Heading
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      #1 & \textit{ #2} \\
-    \end{tabular*}\vspace{-9pt}
-}
-
-%Resume Subheading List
-\newcommand{\resumeSubHeadingListStart}{\subheadingtitlevspace\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-
-%Resume Item List
-\newcommand{\resumeItemListStart}{
-% \vspace{-1pt}
-\begin{itemize}}
-\newcommand{\resumeItemListEnd}{
-% \vspace{-6pt}
-\end{itemize}\vspace{-8pt}}
-
-%-------------------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------------------------------------------
-
+% bibliography with multiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
-% -------------------------------------
-%----------HEADING---------------------
-% -------------------------------------
-
-\begin{flushleft}
-	\textbf{\large John Smith} \\
-	\textit{Salt Lake City, Utah} $|$
-	\textit{111-111-1111} $|$
-	\href{https://website}{{\textit{@website}}} $|$
-	\href{mailto:email@email.com}{{\textit{@mail}}} $|$
-	\href{https://linkedin.com/in/username}{{\textit{@linkedin}}} $|$
-	\href{https://github.com/sansquoi}{{\textit{@github}}}
-	\vspace{-8pt}
-\end{flushleft}
-
-% -------------------------------------
-%---------- PROFESSIONAL SUMMARY ------
-% -------------------------------------
-
-\section{Professional Summary}
-\vspace{-3pt}
-\begin{itemize}[leftmargin=0.15in, label={}]
-	{\item{
-	      {Versatile developer with a Master's in Computer Science, distinguished for collaborative skills and a track record of independently delivering impactful results. Ample experience in full-stack development, delivering well-documented, tested, and operable code. Efficient in collaborating and communicating new ideas and opinions.} \\
-	      }}
-\end{itemize}
-\sectionspace
-
-
-% -------------------------------------
-%----------HEADING---------------------
-% -------------------------------------
-
-\section{Awards and Certifications}
-\resumeSubHeadingListStart
-\resumeProjectHeading
-{\titleItem{Star Award} \emph{ $|$ Company 1}}{September 2018}
-\resumeProjectHeading
-{\titleItem{Kudos Award} \emph{ $|$ Company 2}}{May 2017}
-\resumeProjectHeading
-{\titleItem{IBM Full Stack Software Developer} \emph{$|$ IBM}}{November 2023}
-\resumeProjectHeading
-{\titleItem{CompTia Sec+} \emph{$|$ CompTia}}{December 2023}
-\resumeSubHeadingListEnd
-% -------------------------------------
-%----------TECHNICAL SKILLS------------
-% -------------------------------------
-
-\section{Technical Skills}
-\subheadingtitlevspace
-\begin{itemize}[leftmargin=0.15in, label={}]
-	{\item{
-	      \titleItem{Languages}{: C\#, Python, C/C++, SQL (Postgres, MS-SQL, MySQL), JavaScript, TypeScript, HTML, XML, JSON, CSS, Sass} \\
-	      \titleItem{Frameworks}{: ASP.NET (.NET Core, MVC, VB.NET), jQuery, React Native, Blazor, Node.js, Flask, Django, ExpressJS, Bootstrap} \\
-	      \titleItem{DevOps and API Tools}{: IIS, Git, Docker, OpenShift, Kubernetes, Azure DevOps, TFS, Octopus Deploy, Swagger, Postman} \\
-	      \titleItem{Cloud and Security Tools}{: IBM Cloud, AWS, Azure Cloud, SQL Server, SSIS, SSRS, Linux (Configuring and Managing)} \\
-	      \titleItem{Others}{: Data Modeling, Agile (Scrum/Kanban), SOLID, Design Patterns,  Debugging, Root Cause Analysis}
-	      }}
-\end{itemize}
-\sectionspace
-
-
-
-
-% -------------------------------------
-%----------EXPERIENCE------------------
-% -------------------------------------
+\section{Education}  % for 'contemporary' style use optional argument for displaying an icon, e.g. \section[\faGraduationCap]{Education}
+\cventry{2013--2018}{B.S. Biomedical Engineering}{The University of Texas}{Austin, TX}{\textit{3.65}}{Track III: Computational Engineering}  % arguments 3 to 6 can be left empty
 
 \section{Experience}
-\resumeSubHeadingListStart
-\resumeProjectHeading
-{\titleItem{{Software Developer 3}} $|$ \emph{Company 3}}{August 2021 --Present}
-\resumeItemListStart
-\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.}
-\resumeItem{In cursus turpis massa tincidunt dui. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Suspendisse potenti nullam ac tortor. Ut consequat semper viverra nam libero justo laoreet sit amet. Feugiat nisl pretium fusce id velit ut tortor pretium.}
-\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
-\resumeItemListEnd
+\cventry{2021--2022}{Sr. Systems Software Engineer - GPU}{Nvidia}{Santa Clara, CA}{}{RISCV/CoreOS{}
+\begin{itemize}
+\item Implemented drivers for cryptographic compute engine. Deployed to Hopper/Ada chipsets and DriveOS 6+.
+\item Implemented root-of-trust library for confidential compute. Deployed to Hopper chipsets.
+\item Implemented FSP drivers and integrated coverity into CI/CD pipeline for DriveOS.
+\end{itemize}}
+\cventry{2020--2021}{Sr. Embedded Software Engineer}{Stryker}{San Jose, CA}{}{}
+\cventry{2018--2020}{Embedded Software Engineer}{Stryker}{San Jose, CA}{}{
+  1788 Camera Control Unit
+  \begin{itemize}
+    \item Implemented bootloader and drivers (Cortex M4).
+    \item Incorporated FreeRTOS into project and added first few tasks.
+  \end{itemize}
+  SYNK 4K Wireless Video Platform
+  \begin{itemize}
+    \item Authored SW requirements, specification, and design document to meet IEC 62304 FDA standards.
+  \end{itemize}
+\begin{itemize}
+  \item Software team-lead and majority contributor (Cortex M3).
+  \item Implemented application-layer, driver-layer code, unit tests, POST, CI/CD pipeline, and in-field upgrade.
+  \item Led 2 rounds of board bringup with suppliers just after PCB print/tapeout.
+  \item Merged over 150 pull requests and resolved over 100 JIRA bugs with median resolved time < 2d.
+  \item Recognition: "One Team" Cultural Beliefs Award (Q3 2019), "Best Performance in a Leading Role" (2019), "SYNK 4K Employee of the Month" (Aug 2019, Jan 2020).
+\end{itemize} 
+}
+\cventry{2017--2018}{Software Engineer}{Texas Biophotonics Lab}{Austin, TX}{}{
+  MoleScope
+  \begin{itemize}
+    \item Developed iOS application (Swift) to collect and push images to OpenCV server.
+    \item Developed Python+OpenCV server to calibrate, white balance, and calculate probablity of malignancy. 
+  \end{itemize}
+}
+\cventry{2017}{Software Engineer Intern}{Stryker}{San Jose, CA}{}{
+  1688 Camera Control Unit
+  \begin{itemize}
+    \item Designed/implemented camera autofocus algorithm. Implemented POST and flash driver with load-balancing.
+  \end{itemize}
+}
 
+\cventry{2016}{Software Engineer Intern}{Abbott}{Plano, TX}{}{
+  iOS Test Automation
+  \begin{itemize}
+    \item Implemented automated regression test and CI/CD pipeline for all HW/SW combinations anytime a new iOS beta/version was released.
+    \item Wrote team code guidelines doc and refactored automation code base to follow the guidelines. Reduced codebase volume by 85\% with significantly improved readability/maintainability.
+  \end{itemize}
+}
 
-\resumeProjectHeading
-{\titleItem{{Software Developer 2}} $|$ \emph{Company 2}}{July 2016 -- March 2020}
-\resumeItemListStart
-\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
-\resumeItem{In cursus turpis massa tincidunt dui. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Suspendisse potenti nullam ac tortor. }
-\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
-\resumeItem{In cursus turpis massa tincidunt dui. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Suspendisse potenti nullam ac tortor. Ut consequat semper viverra nam libero justo laoreet sit amet. Feugiat nisl pretium fusce id velit ut tortor pretium. }
-\resumeItemListEnd
+\section{Skill matrix}
+\cvitem{}{}
+%% Skill matrix as an alternative to rate one's skills, computer or other.
 
-\resumeProjectHeading
-{\titleItem{{Software Developer}} $|$ \emph{Company 1}}{July 2016 -- March 2020}
-\resumeItemListStart
-\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat, generating\highlight{$>$\$100,000k in cost savings.}}
-\resumeItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, to save up to\highlight{\$30,000 in development hours.}}
-\resumeItemListEnd
-\resumeSubHeadingListEnd
+%% Adjusts width of skill matrix columns.
+%% Usage \setcvskillcolumns[<width>][<factor>][<exp_width>]
+%% <width>, <exp_width> should be lengths smaller than \textwidth, <factor> needs to be between 0 and 1.
+%% Examples:
+% \setcvskillcolumns[5em][][]%    adjust first column. Same as \setcvskillcolumns[5em]
+% \setcvskillcolumns[][0.45][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
+% \setcvskillcolumns[][][\widthof{``Year''}]%     adjust fourth (years) column.
+% \setcvskillcolumns[][0.45][\widthof{``Year''}]%
+% \setcvskillcolumns[\widthof{``Languag''}][0.48][]
+% \setcvskillcolumns[\widthof{``Languag''}]%
 
-% -------------------------------------
-%----------EDUCATION-------------------
-% -------------------------------------
+%% Adjusts width of legend columns. Usage \setcvskilllegendcolumns[<width>][<factor>]
+%% <factor> needs to be between 0 and 1. <width> should be a length smaller than \textwidth
+%% Examples:
+% \setcvskilllegendcolumns[][0.45]
+% \setcvskilllegendcolumns[\widthof{``Legend''}][0.45]
+% \setcvskilllegendcolumns[0ex][0.46]% this is usefull for the banking style
 
-% \section{Education}
-%   \resumeSubHeadingListStart
-%     \resumeSubheading
-%       {University of Utah}{Salt Lake City, UT}
-%       {MS in Computer Science | GPA: 3.86}{January 2021 -- December 2023} 
-%     \resumeSubheading
-%       {SRM University}{Chennai, TN, India}
-%       {Bachelor of Technology in Computer Science and Engineering | GPA: 3.4}{August 2012 -- May 2016}
-%   \resumeSubHeadingListEnd
-% \vspace{-12pt}
+%% Add a legend if you are using \cvskill{<1-5>} command or \cvskillentry
+%% Usage \cvskilllegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \cvskilllegend % insert default legend without lines
+% \cvskilllegend*[1em]{}% adjust post spacing
+% \cvskilllegend*{Legend}%  Alternatively add a description string
+%% adjust the legend entries for other languages, here German
+% \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legende}
 
-\section{Education}
-\resumeSubHeadingListStart
-\resumeSubheading
-{University of Utah}{GPA : 3.86}
-{MS in Computer Science}{January 2021 -- December 2023}
-\resumeSubheading
-{University of Utah}{GPA : 3.75}
-{BS in Computer Science and Engineering}{August 2012 -- May 2016}
-\resumeSubHeadingListEnd
-\vspace{-8pt}
+%% Alternative legend style with the first three skill levels in one column
+%% Usage \cvskillplainlegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \setcvskilllegendcolumns[][0.6]%  works for classic, casual, banking
+% \setcvskilllegendcolumns[][0.55]%  works better for oldstyle and fancy
+% \cvskillplainlegend{}
+% \cvskillplainlegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte/Guru]{Legende}
 
-% -------------------------------------
-%----------PROJECTS--------------------
-% -------------------------------------
+%% Add a head of the skill matrix table with descriptions.
+%% Usage \cvskillhead[<post_padding>][<Level>][<Skill>][<Years>][<Comment>]%
+\cvskillhead[-0.1em]%   this inserts the standard legend in english and adjust padding
+%% Adjust head of the skill matrix for other languages
+% \cvskillhead[0.25em][Level][F\"ahigkeit][Jahre][Bemerkung]
 
-\section{Projects}
-\resumeSubHeadingListStart
-\resumeProjectHeading
-{\titleItem{Project 1} $|$ \emph{Django, IBM Cloud, SQLite, Function-as-a-Service, Kubernetes, OpenShift}}{Nov 2023}
-\resumeItemListStart
-\resumeItem{In cursus turpis massa tincidunt dui. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Suspendisse potenti nullam ac tortor. }
-\resumeItem{Ut consequat semper viverra nam libero justo laoreet sit amet. Feugiat nisl pretium fusce id velit ut tortor pretium.}
-\resumeItemListEnd
-\resumeProjectHeading
-{\titleItem{Project 2} $|$ \emph{Python, numpy. D3.js}}{Spring 2022}
-\resumeItemListStart
-\resumeItem{Ut consequat semper viverra nam libero justo laoreet sit amet. Feugiat nisl pretium fusce id velit ut tortor pretium.}
-\resumeItem{In cursus turpis massa tincidunt dui. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Suspendisse potenti nullam ac tortor. }
-\resumeItemListEnd
-\resumeProjectHeading
-{\titleItem{Project 3} $|$ \emph{\LaTeX}}{November 2021}
-\resumeItemListStart
-\resumeItem{In cursus turpis massa tincidunt dui. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Suspendisse potenti nullam ac tortor. }
-\resumeItemListEnd
-\resumeSubHeadingListEnd
+%% \cvskillentry[*][<post_padding>]{<skill_cathegory>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}%
+%% Example usages:
+\cvskillentry*{Language:}{3}{Embedded C/C++}{6}{Core Comptency. Rarely use internet as an aid. Enjoys RTFM and using modern C++ features.}
+\cvskillentry{}{2}{Python/Bash}{3}{Go-to for scripting. Efficiency depends on internet.}
+\cvskillentry{}{1}{Swift/Java/C\#}{1}{No recent experience. Requires ramp-up.}
+\cvskillentry*{Technologies:}{3}{I2C/SPI/UART/Cortex-M}{5}{}
+\cvskillentry{}{2}{RISCV/RTOS}{2}{}
+\cvskillentry*{OS:}{3}{Linux}{3}{Arch and Debian-based Distributions}
+\cvskillentry{}{2}{Windows}{10}{Happiest when Outlook is only use case.}
+%% \cvskill{<0-5>} command
+% \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
 
-%-------------------------------------------
+\clearpage
+%-----       letter       ---------------------------------------------------------
+% recipient data
+\recipient{Ericka and Etched recruitment team}{Etched, Inc.\\Cupertino}
+\date{\today}
+\subject{Firmware Engineer}
+\opening{Hello,}
+\closing{Best Regards,}
+\signature{0.9}{signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
+\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+\makelettertitle
+
+I hope this finds you well. Thank you for considering me for the Firmeware Engineer role on your team. Etched seems like an amazing place to work with a very interesting project. I wanted to quickly thank Ericka for her persistance in reaching out to me.
+
+As you'll notice, I've had a work gap over the past $2\frac{1}{2}$ years. This was due to a sudden onset of OCD. After some time at Nvidia, OCD inhibited my work there and eventually led to my termination. At the time I did not know what the issue was. After bouncing around to different mental health professionals with limited progress I was diagnosed with OCD in February 2024. I have been receiving treatment multiple times per week in Phoenix, AZ since the diagnosis. I have come to understand that OCD is hereditary and developed as a complication of starting a new fully-remote job during the pandemic. Since February my treatment has shown significant improvement on my ability to work and live in accordance with my values in spite of having OCD. As a result I have resumed job-seeking and will be moving back to San Jose in January 2025.
+
+How does this impact my efficacy as an employee? This mainly means that I have become more aware of culture fits that work for me and those which don't. Specifically I perform best when I get to collaborate closely with others, when I am not fully remote, and when my manager/coworkers are willing to make time to hear me out should I have questions/concerns. Under these circumstances I am highly motivated and confident in my ability to perform the job well. Should these conditions be impossible to meet then I am probably not the right candidate for your team.
+
+I have continued to write code and take online courses since leaving Nvidia, specifically . The most involved of which is an ultra-light GPS tracker for backpacking. However, as I highly value honesty and do not want to misrepresent myself, I am definitely rusty relative to when I was while working full time. Should you have any questions about this or anything else I am happy to entertain them at any time.
+
+With all that being said, I appreciate your consideration for this role and look forward to your reply.
+
+\makeletterclosing
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
+
+
+%% end of file `template.tex'.
