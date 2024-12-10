@@ -7,7 +7,6 @@
 
 
 \documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-
 \moderncvcolor{orange}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
 % moderncv themes
 \moderncvstyle[]{contemporary}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
@@ -64,7 +63,7 @@
 \social[linkedin]{karlsolomon}                        % optional, remove / comment the line if not wanted
 \social[github]{karlsolomon}                              % optional, remove / comment the line if not wanted
 
-\photo[64pt][2pt]{headshot_close.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 2pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\photo[64pt][2pt]{../photos/headshot_close.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 2pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 
 % bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
 %   to show numerical labels in the bibliography (default is to show no labels)
@@ -90,49 +89,49 @@
 \section{Experience}
 \cventry{2021--2022}{Sr. Systems Software Engineer - GPU}{Nvidia}{Santa Clara, CA}{}{RISCV/CoreOS{}
 \begin{itemize}
-\item Implemented drivers for cryptographic compute engine. Deployed to Hopper/Ada chipsets and DriveOS 6+.
-\item Implemented root-of-trust library for confidential compute. Deployed to Hopper chipsets.
-\item Implemented FSP drivers and integrated coverity into CI/CD pipeline for DriveOS.
+	\item Implemented drivers for cryptographic compute engine. Deployed to Hopper/Ada chipsets and DriveOS 6+.
+	\item Implemented root-of-trust library for confidential compute. Deployed to Hopper chipsets.
+	\item Implemented FSP drivers and integrated coverity into CI/CD pipeline for DriveOS.
 \end{itemize}}
 \cventry{2020--2021}{Sr. Embedded Software Engineer}{Stryker}{San Jose, CA}{}{}
 \cventry{2018--2020}{Embedded Software Engineer}{Stryker}{San Jose, CA}{}{
-  1788 Camera Control Unit
-  \begin{itemize}
-    \item Implemented bootloader and drivers (Cortex M4).
-    \item Incorporated FreeRTOS into project and added first few tasks.
-  \end{itemize}
-  SYNK 4K Wireless Video Platform
-  \begin{itemize}
-    \item Authored SW requirements, specification, and design document to meet IEC 62304 FDA standards.
-  \end{itemize}
-\begin{itemize}
-  \item Software team-lead and majority contributor (Cortex M3).
-  \item Implemented application-layer, driver-layer code, unit tests, POST, CI/CD pipeline, and in-field upgrade.
-  \item Led 2 rounds of board bringup with suppliers just after PCB print/tapeout.
-  \item Merged over 150 pull requests and resolved over 100 JIRA bugs with median resolved time < 2d.
-  \item Recognition: "One Team" Cultural Beliefs Award (Q3 2019), "Best Performance in a Leading Role" (2019), "SYNK 4K Employee of the Month" (Aug 2019, Jan 2020).
-\end{itemize} 
+	1788 Camera Control Unit
+	\begin{itemize}
+		\item Implemented bootloader and drivers (Cortex M4).
+		\item Incorporated FreeRTOS into project and added first few tasks.
+	\end{itemize}
+	SYNK 4K Wireless Video Platform
+	\begin{itemize}
+		\item Authored SW requirements, specification, and design document to meet IEC 62304 FDA standards.
+	\end{itemize}
+	\begin{itemize}
+		\item Software team-lead and majority contributor (Cortex M3).
+		\item Implemented application-layer, driver-layer code, unit tests, POST, CI/CD pipeline, and in-field upgrade.
+		\item Led 2 rounds of board bringup with suppliers just after PCB print/tapeout.
+		\item Merged over 150 pull requests and resolved over 100 JIRA bugs with median resolved time < 2d.
+		\item Recognition: "One Team" Cultural Beliefs Award (Q3 2019), "Best Performance in a Leading Role" (2019), "SYNK 4K Employee of the Month" (Aug 2019, Jan 2020).
+	\end{itemize}
 }
 \cventry{2017--2018}{Software Engineer}{Texas Biophotonics Lab}{Austin, TX}{}{
-  MoleScope
-  \begin{itemize}
-    \item Developed iOS application (Swift) to collect and push images to OpenCV server.
-    \item Developed Python+OpenCV server to calibrate, white balance, and calculate probablity of malignancy. 
-  \end{itemize}
+	MoleScope
+	\begin{itemize}
+		\item Developed iOS application (Swift) to collect and push images to OpenCV server.
+		\item Developed Python+OpenCV server to calibrate, white balance, and calculate probablity of malignancy.
+	\end{itemize}
 }
 \cventry{2017}{Software Engineer Intern}{Stryker}{San Jose, CA}{}{
-  1688 Camera Control Unit
-  \begin{itemize}
-    \item Designed/implemented camera autofocus algorithm. Implemented POST and flash driver with load-balancing.
-  \end{itemize}
+	1688 Camera Control Unit
+	\begin{itemize}
+		\item Designed/implemented camera autofocus algorithm. Implemented POST and flash driver with load-balancing.
+	\end{itemize}
 }
 
 \cventry{2016}{Software Engineer Intern}{Abbott}{Plano, TX}{}{
-  iOS Test Automation
-  \begin{itemize}
-    \item Implemented automated regression test and CI/CD pipeline for all HW/SW combinations anytime a new iOS beta/version was released.
-    \item Wrote team code guidelines doc and refactored automation code base to follow the guidelines. Reduced codebase volume by 85\% with significantly improved readability/maintainability.
-  \end{itemize}
+	iOS Test Automation
+	\begin{itemize}
+		\item Implemented automated regression test and CI/CD pipeline for all HW/SW combinations anytime a new iOS beta/version was released.
+		\item Wrote team code guidelines doc and refactored automation code base to follow the guidelines. Reduced codebase volume by 85\% with significantly improved readability/maintainability.
+	\end{itemize}
 }
 
 \section{Skill matrix}
@@ -198,7 +197,7 @@
 \subject{Firmware Engineer}
 \opening{Hello,}
 \closing{Best Regards,}
-\signature{0.9}{signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
+\signature{0.9}{../photos/signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
 \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
 \makelettertitle
 
