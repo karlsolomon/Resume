@@ -6,7 +6,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 \moderncvcolor{orange}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
 % moderncv themes
 \moderncvstyle[]{contemporary}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
@@ -134,8 +134,13 @@
 	\end{itemize}
 }
 
-\section{Skill matrix}
-\cvitem{}{}
+\section{Computer skills}
+\cvdoubleitem{\textbf{Lanuages}}{C, C++, Python, Bash, Java, C\#}{\textbf{Targets}}{Arm Cortex-M, RISC-V, iOS, Android}
+\cvdoubleitem{\textbf{SW Tools}}{Git, RTOS, JIRA, Jenkins, OpenCV}{\textbf{Peripherals}}{Camera, EEPROM, LED, Flash, GPS}
+\cvdoubleitem{\textbf{Protocols}}{UART, SPI, I\textsuperscript{2}C, USB, HDMI}{\textbf{Equipment}}{Logic Analyzer, Oscope, Solder Iron}
+
+
+% \section{Skill matrix}
 %% Skill matrix as an alternative to rate one's skills, computer or other.
 
 %% Adjusts width of skill matrix columns.
@@ -159,7 +164,7 @@
 %% Add a legend if you are using \cvskill{<1-5>} command or \cvskillentry
 %% Usage \cvskilllegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
 % \cvskilllegend % insert default legend without lines
-% \cvskilllegend*[1em]{}% adjust post spacing
+% \cvskilllegend*[]{}% adjust post spacing
 % \cvskilllegend*{Legend}%  Alternatively add a description string
 %% adjust the legend entries for other languages, here German
 % \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legende}
@@ -169,49 +174,25 @@
 % \setcvskilllegendcolumns[][0.6]%  works for classic, casual, banking
 % \setcvskilllegendcolumns[][0.55]%  works better for oldstyle and fancy
 % \cvskillplainlegend{}
-% \cvskillplainlegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte/Guru]{Legende}
+% \cvskillplainlegend[0.2em][Entry-Level, Rusty][Mid-Level, Regular Usage][Senior, Daily Usage][Deep Knowledge][Expert]{Legend}
 
 %% Add a head of the skill matrix table with descriptions.
 %% Usage \cvskillhead[<post_padding>][<Level>][<Skill>][<Years>][<Comment>]%
-\cvskillhead[-0.1em]%   this inserts the standard legend in english and adjust padding
+% \cvskillhead[-0.1em]%   this inserts the standard legend in english and adjust padding
 %% Adjust head of the skill matrix for other languages
 % \cvskillhead[0.25em][Level][F\"ahigkeit][Jahre][Bemerkung]
 
 %% \cvskillentry[*][<post_padding>]{<skill_cathegory>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}%
 %% Example usages:
-\cvskillentry*{Language:}{3}{Embedded C/C++}{6}{Core Comptency. Rarely use internet as an aid. Enjoys RTFM and using modern C++ features.}
-\cvskillentry{}{2}{Python/Bash}{3}{Go-to for scripting. Efficiency depends on internet.}
-\cvskillentry{}{1}{Swift/Java/C\#}{1}{No recent experience. Requires ramp-up.}
-\cvskillentry*{Technologies:}{3}{I2C/SPI/UART/Cortex-M}{5}{}
-\cvskillentry{}{2}{RISCV/RTOS}{2}{}
-\cvskillentry*{OS:}{3}{Linux}{3}{Arch and Debian-based Distributions}
-\cvskillentry{}{2}{Windows}{10}{Happiest when Outlook is only use case.}
+% \cvskillentry*{Language:}{3}{Embedded C/C++}{6}{Core Comptency. Internet use rare. RTFM.}
+% \cvskillentry{}{2}{Python/Bash}{3}{Go-to for scripting. Efficiency depends on internet.}
+% \cvskillentry{}{1}{Swift/Java/C\#}{1}{No recent experience. Requires ramp-up.}
+% \cvskillentry*{Technologies:}{3}{I2C/SPI/UART/HDMI/USB}{3}{}
+% \cvskillentry{}{2}{Cortex-M/RISCV/RTOS}{3}{}
+% \cvskillentry*{OS:}{3}{Linux}{3}{Arch and Debian-based Distributions}
 %% \cvskill{<0-5>} command
 % \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
 
-\clearpage
-%-----       letter       ---------------------------------------------------------
-% recipient data
-\recipient{Ericka and Etched recruitment team}{Etched, Inc.\\Cupertino}
-\date{\today}
-\subject{Firmware Engineer}
-\opening{Hello,}
-\closing{Best Regards,}
-\signature{0.9}{../photos/signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
-\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-\makelettertitle
-
-I hope this finds you well. Thank you for considering me for the Firmeware Engineer role on your team. Etched seems like an amazing place to work with a very interesting project. I wanted to quickly thank Ericka for her persistance in reaching out to me.
-
-As you'll notice, I've had a work gap over the past $2\frac{1}{2}$ years. This was due to a sudden onset of OCD. After some time at Nvidia, OCD inhibited my work there and eventually led to my termination. At the time I did not know what the issue was. After bouncing around to different mental health professionals with limited progress I was diagnosed with OCD in February 2024. I have been receiving treatment multiple times per week in Phoenix, AZ since the diagnosis. I have come to understand that OCD is hereditary and developed as a complication of starting a new fully-remote job during the pandemic. Since February my treatment has shown significant improvement on my ability to work and live in accordance with my values in spite of having OCD. As a result I have resumed job-seeking and will be moving back to San Jose in January 2025.
-
-How does this impact my efficacy as an employee? This mainly means that I have become more aware of culture fits that work for me and those which don't. Specifically I perform best when I get to collaborate closely with others, when I am not fully remote, and when my manager/coworkers are willing to make time to hear me out should I have questions/concerns. Under these circumstances I am highly motivated and confident in my ability to perform the job well. Should these conditions be impossible to meet then I am probably not the right candidate for your team.
-
-I have continued to write code and take online courses since leaving Nvidia, specifically . The most involved of which is an ultra-light GPS tracker for backpacking. However, as I highly value honesty and do not want to misrepresent myself, I am definitely rusty relative to when I was while working full time. Should you have any questions about this or anything else I am happy to entertain them at any time.
-
-With all that being said, I appreciate your consideration for this role and look forward to your reply.
-
-\makeletterclosing
 
 %\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
