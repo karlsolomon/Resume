@@ -1,0 +1,107 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2024 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\moderncvcolor{orange}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
+% moderncv themes
+\moderncvstyle[]{contemporary}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+                                                   % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+%\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+%\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
+
+% the 'contemporary' style allows to append additional elements to the head background; uncomment and customize if needed
+%\def\@moderncvheadBackground{
+%}
+
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  %\setsansfont[ItalicFont={Fira Sans Light Italic},%
+  %           BoldFont={Fira Sans},%
+  %           BoldItalicFont={Fira Sans Italic}]%
+  %           {Fira Sans Light}%
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+
+% personal data
+\name{Karl}{Solomon}
+\title{Embedded Software Engineer}                               % optional, remove / comment the line if not wanted
+\born{20 April 1995}                                 % optional, remove / comment the line if not wanted
+\address{San Jose, CA}{USA}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+1~(408)~623~7341}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{ksolomon@utexas.edu}                               % optional, remove / comment the line if not wanted
+
+% Social icons
+\social[linkedin]{karlsolomon}                        % optional, remove / comment the line if not wanted
+\social[github]{karlsolomon}                              % optional, remove / comment the line if not wanted
+
+\photo[64pt][2pt]{headshot_close.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 2pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with multiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       letter       ---------------------------------------------------------
+% recipient data
+\recipient{Yosi Gabay and AWS Neuron Recruitment Team}{Amazon Anandupar Lab\\Cupertino, CA}
+\date{\today}
+\subject{Sr. SDE, AWS Neuron Runtime}
+\opening{Hello,}
+\closing{Best Regards,}
+\signature{0.06}{../photos/signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
+\makelettertitle
+
+TODO: add information about AWS Runtime role. S/O Vince
+
+As you'll notice upon reviewing my r\'esum\'e, I have a work gap over the past $2\frac{1}{2}$ years. This was due to a sudden onset of OCD (Obsessive Compulsive Disorder). After some time at Nvidia, OCD inhibited my work there and eventually led to my termination. At the time I did not know what the issue was. After bouncing around to different mental health professionals with limited progress I was diagnosed with OCD in February 2024. I have been receiving treatment multiple times per week in Phoenix, AZ since the diagnosis. I have come to understand that OCD is hereditary and was triggered by starting a new fully-remote job during the pandemic. Since February my treatment has shown significant improvement on my ability to work and live in accordance with my values in spite of having OCD. I am now confident that I can, once again, resume working to the best of my ability. As a result, I am moving back to the Bay Area in Jan 2025, quite eager to contribute.
+
+How has this experience impacted me as an employee? I have become far more self-aware and mindful; I believe this to be a major benefit. I have also become more aware of company cultures which work for me and those which do not. I excel when I get to collaborate closely with others, when I am not fully remote, and when my manager and coworkers have the bandwitdh and company's support to make time to hear me out should I have questions or concerns. In this type of environment I am highly motivated and confident in my ability to perform well.
+
+Should you have any questions about this or anything else I am happy to discuss them at any time. With all that being said, I appreciate your consideration for this role and look forward to your reply.
+
+\makeletterclosing
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
