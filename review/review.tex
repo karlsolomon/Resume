@@ -2,22 +2,137 @@
 
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage[T1]{fontenc}
+\usepackage{xcolor}
 \usepackage{tgcursor}
+\usepackage{listings}
+
+\lstdefinestyle{cpp}{
+    language=C++,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{gray},
+    morecomment=[l][\color{magenta}]{\#},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{black},
+    backgroundcolor=\color{white},
+    tabsize=2,
+    captionpos=b
+}
+
 
 \begin{document}
 \fontfamily{qcr}\selectfont
 \title{Interview Review Chart}
 \author{Karl Solomon}
 \maketitle
+\section{Concepts}
+\subsection{Concurrency vs Parallelism}
+\begin{description}
+	\item[Concurrency]
+When two or more tasks can start/run/complete in overlapping time periods. This does not necessarily mean they'll be running in overlapping time periods. Examples include: \\ RTOS
+\end{description}
+\begin{description}
+	\item[Parallelism]
+When tasks run at the same time (e.g. on a multi-core CPU) 
+\end{description}
+\begin{description}
+	\item[Multithreading]
+When multiple tasks are running on a CPU. This can be implemented truly parallel where each task has access to separate HW/core. However, more common in desktop applications is SMT. 
+\end{description}
+\begin{description}
+	\item[SMT (Simultaneous Multithreading)]
+Multiple threads share 1 core. The thread instructions are pipelines s.t. they run mostly in-parallel, and when one is waiting for I/O the other can run uninhibited, however since only one thread can access a dedicated HW block at any given time they are not truly parallel. 
+\end{description}
+\section{Operating Systems}
 \section{C}
+\subsection{Preprocessor}
+\begin{lstlisting}[style=cpp]
+# // stringizes the macro parameter
+#define stringify(x) #x
+#define foo 1
+stringify(foo) // --> evaluates to "foo", NOT "1"
+\end{lstlisting}
+
+\begin{lstlisting}[style=cpp]
+## // concatenates the macro parameter
+#define COMMAND(NAME)  {#NAME, NAME ## _command}
+struct command commands[] = {
+	COMMAND(quit), // equivalent to {quit_command}
+	COMMAND(help), // equivalent to {help_command}
+}
+\end{lstlisting}
+
+\begin{itemize}
+	\item predefined macros
+		\begin{itemize}
+			\item \_\_FILE\_\_
+			\item \_\_LINE\_\_
+			\item \_\_DATE\_\_
+			\item \_\_TIME\_\_
+			\item \_\_STDC\_VERSION\_\_
+			\item \_\_cplusplus
+		\end{itemize}
+	\item item2
+	\item item3
+	\item item4
+\end{itemize}
+
+\subsection{Peripherals}
+\begin{itemize}
+	\item \textbf{I2C}\\
+		SDA is data, SCL is clock. PURs typically in the 1-4.7k range. Too weak = slow comm and errors. Clocks are usually 100k-1MHz. Addr can be 7 or 10 bit. This is rate-limiter for number of slaves, though line impedance would increase for each slave. Here are some use usage examples:
+		\begin{enumerate}
+			\item Master sends START and slave Addr
+			\item Master sends data to slave
+			\item Master terminates with a STOP
+		\end{enumerate}
+		\begin{enumerate}
+			\item Master sends START and slave Addr
+			\item Master sends data to slave
+			\item Master sends repeatedSTART and either sends more data to slave or receives data from slave.
+			\item Master sends STOP
+		\end{enumerate}
+	\item \textbf{SPI}\\
+	\item \textbf{UART}\\
+	\item \textbf{USB}\\
+	\item \textbf{HDMI}\\
+\end{itemize}
 \section{C++}
 \subsection{Classes}
 \subsection{Containers}
 \begin{itemize}
 	\item Sequence
 	      \begin{itemize}
-		      \item \textbf{array}
+			  \item \textbf{array}
+				  \begin{lstlisting}[style=cpp]
+std::array<int, 3> arr; // uninitialized (whatever was in memory before)
+std::array<int, 3> arr = {}; // initialized as 0s
+std::array<int, 3> arr1 = {1, 2, 3};
+std::array<int, 3> arr2{1, 2, 4};
+arr1.fill(0); // fills array with 0s
+arr1.swap(arr2); // swaps contents of arr1 and arr2
+				  \end{lstlisting}
 		      \item \textbf{vector}
+			      \begin{lstlisting}[style=cpp]
+std::vector<int> v;
+v.capacity(); // size of currently allocated memory
+v.shrink_to_fit(); // releases unused memory
+v.reserve(100); // pre-allocates 100 elements
+v.clear(); // erases all elements
+v.erase(v.begin()); // erases first element
+v.push_back(1); // adds 1 to the end
+v.rbegin(); // reverses iterator
+std::erase_if(v, [](int x) { return x > 10; }); // removes all elements > 10
+std::vector<Pair<int,int>> classV;
+classV.emplace_back(10,1); // create Pair object and push to back
+			      \end{lstlisting}
 		      \item \textbf{inplace\_vector}
 		      \item \textbf{deque}
 	      \end{itemize}
@@ -50,20 +165,102 @@
 \begin{itemize}
 	\item C++11
 	      \begin{itemize}
-		      \item \textbf{auto}\\
-		            oijtoijtoijstd1
-		      \item \textbf{final}
-		      \item \textbf{override}
-		      \item \textbf{trailing return type}
-		      \item \textbf{constexpr}
-		      \item \textbf{initializer list}
 		      \item \textbf{Alias Templates}
+		      \item \textbf{atomic} \\
+			      Well-defined behavior in the event of RMW race contition. Accesses to atomics may establish inter-thread synchronization and order non-atomic accesses.
+			      \begin{lstlisting}[style=cpp]
+			      atomic_bool b; // same as std::atomic<bool> b;
+			      \end{lstlisting}
+		      \item \textbf{auto}
+		      \item \textbf{constexpr}
+		      \item \textbf{final} \\
+			      \begin{itemize}
+			      	\item Specifies that a class cannot be inherited from.
+			      	\item When used in a virtual function, specifies that the function cannot be overridden by a derived class.
+				\item final is also a legal variable/function name. Only has special meaning in member function declaration or class head.
+			      \end{itemize}
+			      \begin{lstlisting}[style=cpp]
+struct Base
+{
+    virtual void foo();
+};
+struct A : Base
+{
+    void foo() final; // Base::foo is overridden and A::foo is the final override
+    void bar() final; // Error: bar cannot be final as it is non-virtual
+};
+ 
+struct B final : A // struct B is final
+{
+    void foo() override; // Error: foo cannot be overridden as it is final in A
+};
+ 
+struct C : B {}; // Error: B is final
+			      \end{lstlisting}
+		      \item \textbf{initializer list}
+		      \item \textbf{iota}
+			      \begin{lstlisting}[style=cpp]
+void iota(ForwardIterator begin, ForwardIterator end, T v); // fills range [first-last] with sequentially increasing values starting at v in begin
+			      \end{lstlisting}
 		      \item \textbf{lambdas}
-		      \item \textbf{range-based for}
-		      \item \textbf{atomic}
 		      \item \textbf{mutex}
+		      \item \textbf{override}
 		      \item \textbf{random}
+			      \begin{lstlisting}[style=cpp]
+			      #include <stdlib>
+			      int rand(); // returns integer in [0, RAND_MAX]
+			      \end{lstlisting}
+			      \begin{lstlisting}[style=cpp]
+			      #include <random>
+			      // default_random_engine
+			      // philox4x64 -> philox_engine
+			      // random_device = non-deterministic generator based on hardware entropy
+			      std::random_device rd;
+			      rd.entropy(); // estimate of random number device entropy. Deterministic entropy = 0.
+			      std::uniform_real_distribution<double> dist(0.0, 1.0);
+			      \end{lstlisting}
+			      Distribution list
+			      \begin{itemize}
+			      	\item uniform
+					\begin{itemize}
+						\item int
+						\item real (double)
+					\end{itemize}
+			      	\item bernoulli
+					\begin{itemize}
+						\item bernoulli
+						\item binomial
+						\item negative binomial
+						\item geometric
+					\end{itemize}
+			      	\item Poisson
+					\begin{itemize}
+						\item poisson
+						\item exponential
+						\item gamma
+						\item weibull
+						\item extreme\_value
+					\end{itemize}
+			      	\item Normal
+					\begin{itemize}
+						\item normal
+						\item lognormal
+						\item chi\_squared
+						\item cauchy
+						\item fisher\_f
+						\item student\_t
+					\end{itemize}
+			      	\item Sampling
+					\begin{itemize}
+						\item discrete
+						\item piecewise\_constant
+						\item piecewise\_linear
+						\item item4
+					\end{itemize}
+			      \end{itemize}
+		      \item \textbf{range-based for}
 		      \item \textbf{thread}
+		      \item \textbf{trailing return type}
 	      \end{itemize}
 	\item C++14
 	      \begin{itemize}
