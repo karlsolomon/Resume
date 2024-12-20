@@ -314,21 +314,51 @@ void iota(ForwardIterator begin, ForwardIterator end, T v); // fills range [firs
 	      \begin{itemize}
 		      \item \textbf{Modules}
 		      \item \textbf{Coroutines}
-		      \item \textbf{Ranges}
-		      \item \textbf{Midpoint}
+		      \item \textbf{Ranges} \\
+Extension/Generalization of algorithms and iterator libraries to make them less error-prone. Ranges are an abstraction of the following:
+			      \begin{itemize}
+			      	\item \verb![begin, end) iterator pair : ranges::sort()!
+			      	\item \verb!begin + [0, size) : views::counted()!
+			      	\item \verb![begin, predicate) : views::take\_while() (conditionally-terminated sequences)!
+			      	\item \verb![begin, ..) : unbounded (e.g. views::iota())!
+			      \end{itemize}
+\verb!std::views // shorthand for std::ranges::views!
+TODO: do more usage/investigation on these
+
+
+		      \item \textbf{Midpoint} \\
+Can be used on any arithmetic type, excluding bool. Can be used on objects as long as they are not incomplete types. Returns half the sum of the two inputs, no overflow occurs (this is the main reason to use STL rather than custom implementation). Inputs must point to elements in same object, else behavior is undefined. In case of decimal in average, rounds down.
+
 		      \item \textbf{using enum}
 		      \item \textbf{constinit}
 		      \item \textbf{string formatting}
 		      \item \textbf{template concepts}
+		      \item \textbf{coroutines}
+		      \item \textbf{modules}
 	      \end{itemize}
 	\item C++23
 	      \begin{itemize}
 		      \item \textbf{print/println}
+			      \begin{lstlisting}[style=cpp]
+			      #include <print>
+			      std::print("{0} {2}{1}!", "Hello", 23, "C++"););
+			      std::println(); // adds newline to std::print();
+			      \end{lstlisting}
 		      \item \textbf{byteswap}
+			      \begin{lstlisting}[style=cpp]
+			      #include <bit>
+			      std::byteswap(T n) noexcept; // T can be any integer value
+			      \end{lstlisting}
 		      \item \textbf{flat\_map/flat\_set}
 	      \end{itemize}
 \end{itemize}
-\subsection{C++23}
+\subsection{Concepts}
+\begin{itemize}
+	\item \textbf{Types}
+	\item \textbf{RAII}
+	\item \textbf{item3}
+	\item \textbf{item4}
+\end{itemize}
 
 \end{document}
 \enddocument

@@ -1,0 +1,137 @@
+\documentclass{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{tgcursor}
+
+\begin{document}
+\fontfamily{qcr}\selectfont
+\title{Interview Questions}
+\author{Karl Solomon}
+
+\maketitle
+\small
+\begin{itemize}
+	\item Vince/AMZN:
+	      \begin{itemize}
+		      \item 12 Leadership Principles
+				  \begin{enumerate}
+				  	\item Customer Obsession \\
+						Refusal to cut scope at SYK. Just put in more hours to get the job done on time and with sales' desired features.
+				  	\item Ownership \\
+						I was quite literally the software owner at SYK. I did everything from software architecture, component selection, driver development, wrote scheduler/dispatcher, in-field upgrade (USB).
+						Cared highly about finding bugs fast at Nvidia. Integrated coverity, gcov, and unit tests into the RISCV Core RM. This identified numerous bugs and code bloat prior to Ada/Hopper tapeout.
+				  	\item Invent and Simplify \\
+				  	\item Be right often \\ 
+
+				  	\item Learn and be curious \\
+						Currently exploring some of the more recent c++ features (ranges, modules, in order to improve my ability to write cleaner and more efficient code.)
+				  	\item Hire and develop the best
+				  	\item Insist on highest standards \\
+				  	\item Think big
+				  	\item Bias for action \\
+				  	\item Frugality
+				  	\item Earn Trust \\
+						X-Functional team's trust to be fully responsible for the software. They had confidence that any bug we identified I could resolve.
+						Also Amimon's trust. SYK had a very strong-arm relationship with their clients, however I understood that we were making a lot of unrealistic demands of them. They understood that I could help translate what requests were reasonable and which were not.
+				  	\item Dive deep \\
+						Autofocus 
+				  \end{enumerate}
+		      \item Make sure to ask questions
+		      \item Prioritize working solution. But very much interested in optimal approach. Try to identify best data structures/algorithms.
+		      \item Make sure to discuss WHY I'm making specific decisions in my implementation.
+		      \item Many recent ocus on concurrency/multithreading in low-level
+		      \item virtual white-board. Will not actually be running code
+		      \item 
+		      \item 
+		      \item 
+		      \item 
+		      \item 
+		      \item https://amazon.jobs/content/en/how-we-hire/sde-ii-interview-prep
+\end{itemize}
+\end{itemize}
+\end{document}
+\enddocument
+
+
+Concurrency and Multithreading:
+
+Basic concepts of threads and processes
+Thread synchronization mechanisms (mutexes, semaphores, locks)
+Race conditions and deadlocks
+Atomic operations
+Thread-Safe Data Structures:
+
+Concurrent collections (e.g., ConcurrentQueue, ConcurrentBag)
+Lock-free data structures
+Understanding the differences between thread-safe and non-thread-safe collections
+Design Patterns for Concurrency:
+
+Producer-Consumer pattern
+Readers-Writer pattern
+Thread pool pattern
+Language-Specific Concurrency Features:
+
+For Java: java.util.concurrent package
+For C#: Task Parallel Library (TPL) and async/await
+For C++: std::thread and <atomic> library
+Callback Mechanisms:
+
+Function pointers
+Delegates (in languages that support them)
+Lambda expressions
+Performance Considerations:
+
+Understanding the overhead of different synchronization mechanisms
+Balancing thread safety with performance
+Testing Multithreaded Code:
+
+Techniques for writing unit tests for concurrent code
+Tools for detecting race conditions and deadlocks
+Distributed Systems Concepts:
+
+While not directly related to this problem, understanding concepts like eventual consistency and distributed locking can be beneficial
+Algorithms for Concurrent Operations:
+
+Compare-And-Swap (CAS) operations
+Lock-free algorithms
+Memory Models:
+
+Understanding memory barriers and volatile variables
+Cache coherence issues in multi-core systems
+Practice Problems:
+
+Implement a thread-safe singleton
+Create a simple producer-consumer queue
+Implement a basic thread pool
+Solve classic concurrency problems like the dining philosophers problem
+Remember, for interviews, it's not just about knowing the solutions, but also being able to explain your reasoning, discuss trade-offs, and analyze the performance and correctness of your solutions.
+
+Lastly, be prepared to write code on a whiteboard or in a simple text editor. Practice implementing these concepts without relying on an IDE's features.
+
+List out all of the major problems I've had to overcome.
+Be able to talk about each of those stories
+PROBLEM
+ACTION STEPS to solve
+OUTCOME
+
+for phone interview
+most often:
+deliver results, then ownership, then be curious
+
+
+Good Framework to answer the behavioral
+Solving problems which positively impact your team, company or external customers
+•	A time when you weren’t satisfied with the status quo and made improvements
+•	Incorporating feedback from a customer to improve a product or service
+•	Taking initiative and ownership of problems which fall outside the scope your day to day duties 
+•	Acquiring new skills in order to solve a problem
+•	Figuring out solutions to ambiguous situations (data driven, dive deep, learn and be curious)
+•	Learning from past mistakes or outcome which weren’t ideal
+•	Delivering an important project under a tight deadline
+•	What was the scope or impact of across the organization or customer base (the broader the impact the better)
+
+
+Good example to write a few test cases in addition to the solution
+
+
