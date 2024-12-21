@@ -68,37 +68,54 @@ most often seen for this role: deliver results, then ownership, then be curious
 	\end{itemize}
 	\item Specifics
 		\begin{itemize}
-			\item Concurrency and Multithreading \\
-Basic concepts of threads and processes
-Thread synchronization mechanisms (mutexes, semaphores, locks)
-Race conditions and deadlocks
-Atomic operations
-			\item Thread-Safe Data Structures: \\
-Concurrent collections
-Concurrent collections (e.g., ConcurrentQueue, ConcurrentBag)
-Lock-free data structures
-Understanding the differences between thread-safe and non-thread-safe collections
-			\item Design Patterns for Concurrency: \\
-Producer-Consumer pattern
-Readers-Writer pattern
-Thread pool pattern
-			\item Language-Specific Concurrency Features: \\
-				For C++: std::thread and <atomic> library
-			\item Callback Mechanisms: \\
-Function pointers
-Delegates (in languages that support them)
-Lambda expressions
-			\item Performance Considerations: \\
-Understanding the overhead of different synchronization mechanisms
-Balancing thread safety with performance
+			\item Concurrency and Multithreading
+				\begin{itemize}
+					\item Basic concepts of threads and processes
+					\item Thread synchronization mechanisms (mutexes, semaphores, locks)
+					\item Race conditions and deadlocks
+					\item Atomic operations
+				\end{itemize}
+			\item Thread-Safe Data Structures:
+				\begin{itemize}
+					\item Concurrent collections
+					\item Concurrent collections (e.g., ConcurrentQueue, ConcurrentBag)
+					\item Lock-free data structures
+					\item Understanding the differences between thread-safe and non-thread-safe collections
+				\end{itemize}
+			\item Design Patterns for Concurrency:
+				\begin{itemize}
+					\item Producer-Consumer pattern
+					\item Readers-Writer pattern
+					\item Thread pool pattern
+				\end{itemize}
+			\item Language-Specific Concurrency Features for C++: 
+				\begin{itemize}
+					\item std::thread
+					\item <atomic>
+				\end{itemize}
+			\item Callback Mechanisms:
+				\begin{itemize}
+					\item Function pointers
+					\item Delegates (in languages that support them)
+					\item Lambda expressions
+				\end{itemize}
+			\item Performance Considerations:
+				\begin{itemize}
+					\item Understanding the overhead of different synchronization mechanisms
+					\item Balancing thread safety with performance
+				\end{itemize}
 			\item Testing Multithreaded Code: \\
-Techniques for writing unit tests for concurrent code
-Tools for detecting race conditions and deadlocks
+				\begin{itemize}
+					\item Techniques for writing unit tests for concurrent code
+					\item Tools for detecting race conditions and deadlocks
+				\end{itemize}
 			\item Distributed Systems Concepts: \\
 While not directly related to this problem, understanding concepts like eventual consistency and distributed locking can be beneficial
 			\item Algorithms for Concurrent Operations: \\
-Compare-And-Swap (CAS) operations
-Lock-free algorithms
+				\begin{itemize}
+					\item Compare-And-Swap (CAS) operations
+					\item Lock-free algorithms
+				\end{itemize}
 			\item Memory Models:
 				\begin{itemize}
 					\item Understanding memory barriers and volatile variables
