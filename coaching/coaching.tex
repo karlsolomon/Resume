@@ -3,6 +3,7 @@
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{tgcursor}
+\usepackage{hyperref}
 
 \begin{document}
 \fontfamily{qcr}\selectfont
@@ -11,103 +12,115 @@
 
 \maketitle
 \small
+
+\section{AMZN}
+\subsection{Behavioral Coaching}
+most often seen for this role: deliver results, then ownership, then be curious
 \begin{itemize}
-	\item Vince/AMZN:
-	      \begin{itemize}
-		      \item 12 Leadership Principles
-				  \begin{enumerate}
-				  	\item Customer Obsession \\
-						Refusal to cut scope at SYK. Just put in more hours to get the job done on time and with sales' desired features.
-				  	\item Ownership \\
-						I was quite literally the software owner at SYK. I did everything from software architecture, component selection, driver development, wrote scheduler/dispatcher, in-field upgrade (USB).
-						Cared highly about finding bugs fast at Nvidia. Integrated coverity, gcov, and unit tests into the RISCV Core RM. This identified numerous bugs and code bloat prior to Ada/Hopper tapeout.
-				  	\item Invent and Simplify \\
-				  	\item Be right often \\ 
-
-				  	\item Learn and be curious \\
-						Currently exploring some of the more recent c++ features (ranges, modules, in order to improve my ability to write cleaner and more efficient code.)
-				  	\item Hire and develop the best
-				  	\item Insist on highest standards \\
-				  	\item Think big
-				  	\item Bias for action \\
-				  	\item Frugality
-				  	\item Earn Trust \\
-						X-Functional team's trust to be fully responsible for the software. They had confidence that any bug we identified I could resolve.
-						Also Amimon's trust. SYK had a very strong-arm relationship with their clients, however I understood that we were making a lot of unrealistic demands of them. They understood that I could help translate what requests were reasonable and which were not.
-				  	\item Dive deep \\
-						Autofocus 
-				  \end{enumerate}
-		      \item Make sure to ask questions
-		      \item Prioritize working solution. But very much interested in optimal approach. Try to identify best data structures/algorithms.
-		      \item Make sure to discuss WHY I'm making specific decisions in my implementation.
-		      \item Many recent ocus on concurrency/multithreading in low-level
-		      \item virtual white-board. Will not actually be running code
-		      \item 
-		      \item 
-		      \item 
-		      \item 
-		      \item 
-		      \item https://amazon.jobs/content/en/how-we-hire/sde-ii-interview-prep
+    \item Behavioral: list of toughest challenges faced on the job
+	\item Good Framework to answer the behavioral
+		\begin{itemize}
+			\item Solving problems which positively impact your team, company or external customers
+			\item A time when you weren’t satisfied with the status quo and made improvements
+			\item Incorporating feedback from a customer to improve a product or service
+			\item Taking initiative and ownership of problems which fall outside the scope your day to day duties 
+			\item Acquiring new skills in order to solve a problem
+			\item Figuring out solutions to ambiguous situations (data driven, dive deep, learn and be curious)
+			\item Learning from past mistakes or outcome which weren’t ideal
+			\item Delivering an important project under a tight deadline
+			\item What was the scope or impact of across the organization or customer base (the broader the impact the better)
+		\end{itemize}
+	\item 12 Leadership Principles:
+		\begin{enumerate}
+			\item \textbf{Customer Obsession }\\
+				Refusal to cut scope at SYK. Just put in more hours to get the job done on time and with sales' desired features.
+			\item \textbf{Ownership }\\
+				I was quite literally the software owner at SYK. I did everything from software architecture, component selection, driver development, wrote scheduler/dispatcher, in-field upgrade (USB).
+				Cared highly about finding bugs fast at Nvidia. Integrated coverity, gcov, and unit tests into the RISCV Core RM. This identified numerous bugs and code bloat prior to Ada/Hopper tapeout.
+			\item \textbf{Invent and Simplify }\\
+			\item \textbf{Be right often }\\ 
+			
+			\item \textbf{Learn and be curious }\\
+				Currently exploring some of the more recent c++ features (ranges, modules, in order to improve my ability to write cleaner and more efficient code.)
+			\item \textbf{Hire and develop the best}
+			\item \textbf{Insist on highest standards }\\
+			\item \textbf{Think big}
+			\item \textbf{Bias for action }\\
+			\item \textbf{Frugality}
+			\item \textbf{Earn Trust }\\
+				X-Functional team's trust to be fully responsible for the software. They had confidence that any bug we identified I could resolve.
+				Also Amimon's trust. SYK had a very strong-arm relationship with their clients, however I understood that we were making a lot of unrealistic demands of them. They understood that I could help translate what requests were reasonable and which were not.
+			\item \textbf{Dive deep }\\
+			Autofocus 
+		\end{enumerate}
 \end{itemize}
-\end{itemize}
-\end{document}
-\enddocument
-
-
-Concurrency and Multithreading:
-
+\subsection{Technical Coaching}
+\href{https://amazon.jobs/content/en/how-we-hire/sde-ii-interview-prep}{See HERE for how they hire}
+\begin{itemize}
+	\item Generic Feedback/Setup
+	\begin{itemize}
+		\item Make sure to ask questions
+		\item Prioritize working solution. But very much interested in optimal approach. Try to identify best data structures/algorithms.
+		\item Make sure to discuss WHY I'm making specific decisions in my implementation.
+		\item Many recent ocus on concurrency/multithreading in low-level
+		\item Virtual white-board/shared text editor. Will not actually be running code
+		\item See here for details: 
+	\end{itemize}
+	\item Specifics
+		\begin{itemize}
+			\item Concurrency and Multithreading \\
 Basic concepts of threads and processes
 Thread synchronization mechanisms (mutexes, semaphores, locks)
 Race conditions and deadlocks
 Atomic operations
-Thread-Safe Data Structures:
-
+			\item Thread-Safe Data Structures: \\
+Concurrent collections
 Concurrent collections (e.g., ConcurrentQueue, ConcurrentBag)
 Lock-free data structures
 Understanding the differences between thread-safe and non-thread-safe collections
-Design Patterns for Concurrency:
-
+			\item Design Patterns for Concurrency: \\
 Producer-Consumer pattern
 Readers-Writer pattern
 Thread pool pattern
-Language-Specific Concurrency Features:
-
-For Java: java.util.concurrent package
-For C#: Task Parallel Library (TPL) and async/await
-For C++: std::thread and <atomic> library
-Callback Mechanisms:
-
+			\item Language-Specific Concurrency Features: \\
+				For C++: std::thread and <atomic> library
+			\item Callback Mechanisms: \\
 Function pointers
 Delegates (in languages that support them)
 Lambda expressions
-Performance Considerations:
-
+			\item Performance Considerations: \\
 Understanding the overhead of different synchronization mechanisms
 Balancing thread safety with performance
-Testing Multithreaded Code:
-
+			\item Testing Multithreaded Code: \\
 Techniques for writing unit tests for concurrent code
 Tools for detecting race conditions and deadlocks
-Distributed Systems Concepts:
-
+			\item Distributed Systems Concepts: \\
 While not directly related to this problem, understanding concepts like eventual consistency and distributed locking can be beneficial
-Algorithms for Concurrent Operations:
-
+			\item Algorithms for Concurrent Operations: \\
 Compare-And-Swap (CAS) operations
 Lock-free algorithms
-Memory Models:
+			\item Memory Models:
+				\begin{itemize}
+					\item Understanding memory barriers and volatile variables
+					\item Cache coherence issues in multi-core systems
+				\end{itemize}
+\item Practice Problems:
+	\begin{itemize}
+		\item Implement a thread-safe singleton
+		\item Create a simple producer-consumer queue
+		\item Implement a basic thread pool
+		\item Solve classic concurrency problems like the dining philosophers problem
+		\item Write a few test cases in addition to the solution
+		\item Remember, for interviews, it's not just about knowing the solutions, but also being able to explain your reasoning, discuss trade-offs, and analyze the performance and correctness of your solutions.
+		\item Lastly, be prepared to write code on a whiteboard or in a simple text editor. Practice implementing these concepts without relying on an IDE's features.
+	\end{itemize}
+\end{itemize}
+\end{itemize}
 
-Understanding memory barriers and volatile variables
-Cache coherence issues in multi-core systems
-Practice Problems:
-
-Implement a thread-safe singleton
-Create a simple producer-consumer queue
-Implement a basic thread pool
-Solve classic concurrency problems like the dining philosophers problem
-Remember, for interviews, it's not just about knowing the solutions, but also being able to explain your reasoning, discuss trade-offs, and analyze the performance and correctness of your solutions.
-
-Lastly, be prepared to write code on a whiteboard or in a simple text editor. Practice implementing these concepts without relying on an IDE's features.
+\subsection{Behavioral implementation}
+\subsection{Technical implementation}
+\end{document}
+\enddocument
 
 List out all of the major problems I've had to overcome.
 Be able to talk about each of those stories
@@ -116,22 +129,7 @@ ACTION STEPS to solve
 OUTCOME
 
 for phone interview
-most often:
-deliver results, then ownership, then be curious
 
 
-Good Framework to answer the behavioral
-Solving problems which positively impact your team, company or external customers
-•	A time when you weren’t satisfied with the status quo and made improvements
-•	Incorporating feedback from a customer to improve a product or service
-•	Taking initiative and ownership of problems which fall outside the scope your day to day duties 
-•	Acquiring new skills in order to solve a problem
-•	Figuring out solutions to ambiguous situations (data driven, dive deep, learn and be curious)
-•	Learning from past mistakes or outcome which weren’t ideal
-•	Delivering an important project under a tight deadline
-•	What was the scope or impact of across the organization or customer base (the broader the impact the better)
-
-
-Good example to write a few test cases in addition to the solution
 
 
