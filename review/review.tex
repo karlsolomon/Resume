@@ -188,9 +188,13 @@ else
         \item Practice Problems:
           \begin{itemize}
             \item Implement a thread-safe singleton
+              \lstinputlisting[style=cpp] {code/threadSafeSingleton.cpp}
             \item Create a simple producer-consumer queue
+              \lstinputlisting[style=cpp] {code/producerConsumerQueue.cpp}
             \item Implement a basic thread pool
+              \lstinputlisting[style=cpp] {code/basicThreadPool.cpp}
             \item Solve classic concurrency problems like the dining philosophers problem
+              \lstinputlisting[style=cpp] {code/diningPhilosophers.cpp}
           \end{itemize}
       \end{itemize}
       Write a few test cases in addition to the solution
@@ -198,6 +202,26 @@ else
       Lastly, be prepared to write code on a whiteboard or in a simple text editor. Practice implementing these concepts without relying on an IDE's features.
 
 \section{Operating Systems}
+    \subsection{Basic Concepts}
+      \begin{itemize}
+        \item \textbf{Processes and Threads}
+          \begin{itemize}
+            \item Process creation and termination
+            \item Thread lifecycle and management
+          \end{itemize}
+        \item \textbf{Memory Management}
+          \begin{itemize}
+            \item Virtual memory
+            \item Paging and segmentation
+          \end{itemize}
+        \item \textbf{File Systems}
+          \begin{itemize}
+            \item File system structure
+            \item File operations and permissions
+          \end{itemize}
+      \end{itemize}
+
+
 \section{C}
     \subsection{Preprocessor}
       \begin{lstlisting}[style=cpp]
@@ -247,12 +271,34 @@ struct command commands[] = {
             \item Master sends STOP
           \end{enumerate}
         \item \textbf{SPI}\\
+          Serial Peripheral Interface (SPI) is a synchronous serial communication protocol used for short-distance communication, primarily in embedded systems. It uses a master-slave architecture with a single master and multiple slaves. Communication is full-duplex, and it requires four wires: MOSI, MISO, SCLK, and SS.
         \item \textbf{UART}\\
+          Universal Asynchronous Receiver-Transmitter (UART) is a hardware communication protocol that uses asynchronous serial communication with configurable speed. It is commonly used for communication between microcontrollers and peripherals. UART requires only two wires: TX (transmit) and RX (receive).
         \item \textbf{USB}\\
+          Universal Serial Bus (USB) is an industry-standard for short-distance digital data communications. It supports plug-and-play installation and hot swapping. USB is used for connecting peripherals such as keyboards, mice, printers, and external storage devices to computers.
         \item \textbf{HDMI}\\
+          High-Definition Multimedia Interface (HDMI) is a proprietary audio/video interface for transmitting uncompressed video data and compressed or uncompressed digital audio data from an HDMI-compliant source device to a compatible display device. It is commonly used for connecting devices like TVs, monitors, and projectors.
       \end{itemize}
 \section{C++}
     \subsection{Classes}
+      \begin{itemize}
+        \item \textbf{Class Definition}
+          \begin{itemize}
+            \item Syntax and structure
+            \item Access specifiers: public, private, protected
+          \end{itemize}
+        \item \textbf{Inheritance}
+          \begin{itemize}
+            \item Single and multiple inheritance
+            \item Virtual inheritance
+          \end{itemize}
+        \item \textbf{Polymorphism}
+          \begin{itemize}
+            \item Function overloading
+            \item Operator overloading
+            \item Virtual functions and abstract classes
+          \end{itemize}
+      \end{itemize}
     \subsection{Containers}
       \begin{itemize}
         \item Sequence
