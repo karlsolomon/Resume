@@ -123,6 +123,7 @@ else
         \item Callback Mechanisms:
           \begin{itemize}
             \item Function pointers
+              \lstinputlisting[style=cpp] {sources/functionPointers.cpp}
             \item Delegates (in languages that support them)
             \item Lambda expressions
           \end{itemize}
@@ -188,13 +189,13 @@ else
         \item Practice Problems:
           \begin{itemize}
             \item Implement a thread-safe singleton
-              \lstinputlisting[style=cpp] {code/threadSafeSingleton.cpp}
+              \lstinputlisting[style=cpp] {sources/threadSafeSingleton.cpp}
             \item Create a simple producer-consumer queue
-              \lstinputlisting[style=cpp] {code/producerConsumerQueue.cpp}
+              \lstinputlisting[style=cpp] {sources/producerConsumerQueue.cpp}
             \item Implement a basic thread pool
-              \lstinputlisting[style=cpp] {code/basicThreadPool.cpp}
+              \lstinputlisting[style=cpp] {sources/basicThreadPool.cpp}
             \item Solve classic concurrency problems like the dining philosophers problem
-              \lstinputlisting[style=cpp] {code/diningPhilosophers.cpp}
+              \lstinputlisting[style=cpp] {sources/diningPhilosophers.cpp}
           \end{itemize}
       \end{itemize}
       Write a few test cases in addition to the solution
@@ -202,8 +203,14 @@ else
       Lastly, be prepared to write code on a whiteboard or in a simple text editor. Practice implementing these concepts without relying on an IDE's features.
 
 \section{Operating Systems}
+    \subsection{Caches}
+      \begin{description}
+        \item[TLB]
+          The TLB is a small, fast, and fast-access memory that is used to translate virtual memory addresses into physical memory addresses. a.k.a. Translation Lookaside Buffer.
+      \end{description}
     \subsection{Basic Concepts}
       \begin{itemize}
+        \item \textbf{TLB: Translate Lookaside Buffer}
         \item \textbf{Processes and Threads}
           \begin{itemize}
             \item Process creation and termination
@@ -280,6 +287,50 @@ struct command commands[] = {
           High-Definition Multimedia Interface (HDMI) is a proprietary audio/video interface for transmitting uncompressed video data and compressed or uncompressed digital audio data from an HDMI-compliant source device to a compatible display device. It is commonly used for connecting devices like TVs, monitors, and projectors.
       \end{itemize}
 \section{C++}
+    \subsection{<algorithm>}
+      \begin{itemize}
+        \item \textbf{batchOperations}
+          \begin{itemize}
+            \item for\_each, ranges::for\_each, for\_each\_n, ranges::for\_each\_n \\
+              \lstinputlisting[style=cpp] {sources/foreach.cpp}
+          \end{itemize}
+        \item \textbf{Search Operations}
+          \begin{itemize}
+            \item all\_of, any\_of, none\_of \\
+              \lstinputlisting[style=cpp] {sources/all_of.cpp}
+            \item ranges::contains, ranges::contains\_subrange \\
+              \lstinputlisting[style=cpp] {sources/contains.cpp}
+            \item find, find\_if, find\_if\_not, ranges::find, ranges::find\_if, ranges::find\_if\_not \\
+              \lstinputlisting[style=cpp] {sources/find.cpp}
+            \item find\_last, find\_last\_if, find\_last\_if\_not, find\_end, ranges::find\_end \\
+              \lstinputlisting[style=cpp] {sources/find_last.cpp}
+          \end{itemize}
+        \item \textbf{find\_end, ranges::find\_end, find\_first\_of, ranges::find\_first\_of}
+        \item \textbf{adjacent\_find, ranges::adjacent\_find}
+        \item \textbf{count, count\_if, ranges::count, ranges::count\_if}
+        \item \textbf{mismatch, ranges::mismatch, equal, ranges::equal}
+        \item \textbf{search, search\_n, ranges::search, ranges::search\_n}
+        \item \textbf{ranges::starts\_with, ranges::ends\_with}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{}
+        \item \textbf{std::transform} \\
+          \lstinputlisting[style=cpp] {sources/transform.cpp}
+        \item \textbf{item2}
+        \item \textbf{item3}
+        \item \textbf{item4}
+      \end{itemize}
     \subsection{Classes}
       \begin{itemize}
         \item \textbf{Class Definition}
@@ -359,6 +410,7 @@ classV.emplace_back(10,1); // create Pair object and push to back
         \item C++11
           \begin{itemize}
             \item \textbf{Alias Templates}
+              \lstinputlisting[style=cpp] {sources/aliasTemplates.cpp}
             \item \textbf{atomic} \\
               Well-defined behavior in the event of RMW race contition. Accesses to atomics may establish inter-thread synchronization and order non-atomic accesses.
               \begin{lstlisting}[style=cpp]
@@ -391,11 +443,13 @@ struct B final : A // struct B is final
 struct C : B {}; // Error: B is final
          \end{lstlisting}
             \item \textbf{initializer list}
+              \lstinputlisting[style=cpp] {sources/initializerList.cpp}
             \item \textbf{iota}
               \begin{lstlisting}[style=cpp]
 void iota(ForwardIterator begin, ForwardIterator end, T v); // fills range [first-last] with sequentially increasing values starting at v in begin
          \end{lstlisting}
             \item \textbf{lambdas}
+              \lstinputlisting[style=cpp] {sources/lambdas.cpp}
               \begin{description}
                 \item[capture]
                   comma-separated list of variables which are captured/modified by the lambda. Captures cannot have same name as input parameters.
@@ -492,6 +546,7 @@ std::uniform_real_distribution<double> dist(0.0, 1.0);
             \item \textbf{range-based for}
             \item \textbf{thread}
             \item \textbf{trailing return type}
+              \verb!auto main() --> int {return 0;}!
           \end{itemize}
         \item C++14
           \begin{itemize}
@@ -501,7 +556,24 @@ std::uniform_real_distribution<double> dist(0.0, 1.0);
         \item C++17
           \begin{itemize}
             \item \textbf{tuple}
+              \lstinputlisting[style=cpp] {sources/tuples.cpp}
             \item \textbf{execution policies}
+              \begin{description}
+                \item[seq]
+                  used to disambiguate parallel algorithm overloading and require that a parallel algorithm's execution must be sequential. This is used by default when no execution policy is specified.
+              \end{description}
+              \begin{description}
+                \item[par]
+                  Indicates that a parallel algorithm MAY be parallelized. Synchronization techniques (e.g. mutexes) may be used.
+              \end{description}
+              \begin{description}
+                \item[par\_unseq]
+                  A parallel algoithm MAY be parallelized, vectorized, and moved between threads. Vectorization MUST not use any vectorization-unsafe operations (e.g. mutexes and std::atomic)
+              \end{description}
+              \begin{description}
+                \item[unseq]
+                  An algorithm's execution MAY be vectorized. Synchronization techniques MUST NOT be used. Since C++20 (the rest of the policies were introduced in C++17).
+              \end{description}
           \end{itemize}
         \item C++20
           \begin{itemize}
@@ -549,6 +621,10 @@ std::byteswap(T n) noexcept; // T can be any integer value
       \begin{itemize}
         \item \textbf{Types}
         \item \textbf{RAII}
+          \begin{description}
+            \item[RAII]
+              Resource Acquisition Is Initialization
+          \end{description}
         \item \textbf{item3}
         \item \textbf{item4}
       \end{itemize}
