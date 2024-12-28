@@ -101,11 +101,12 @@
 \section{Fold Operations}
     \begin{itemize}
       \item ranges::fold\_left
-      \item ranges::\_fold\_left\_first
+      \item ranges::fold\_left\_first
       \item ranges::fold\_left\_with\_iter
       \item ranges::fold\_left\_first\_with\_iter
       \item ranges::fold\_right
       \item ranges::fold\_right\_last
+        \lstinputlisting[style=cpp] {sources/fold.cpp}
     \end{itemize}
 \section{Copy Operations}
     \begin{itemize}
@@ -163,18 +164,20 @@
     \end{itemize}
 \section{Removing Operations}
     \begin{itemize}
-      \item remove
-      \item remove\_if
+      \item remove: removes all occurrences of a specified value
+      \item remove\_if: removes all elements that satisfy a defined condition
       \item ranges::remove
       \item ranges::remove\_if
-      \item remove\_copy
-      \item remove\_copy\_if
+      \item remove\_copy: copies elements from the source to the result that are not equal to the value
+      \item remove\_copy\_if: copies elements from the source to the result that do not satisfy the condition
       \item ranges::remove\_copy
       \item ranges::remove\_copy\_if
+        \lstinputlisting[style=cpp] {sources/remove/remove.cpp}
       \item unique
       \item unique\_copy
       \item ranges::unique
       \item ranges::unique\_copy
+        \lstinputlisting[style=cpp] {sources/remove/unique.cpp}
     \end{itemize}
 \section{Order-Changing Operations}
     \begin{itemize}
@@ -193,15 +196,17 @@
       \item shuffle
       \item random\_shuffle
       \item ranges::shuffle
+        \lstinputlisting[style=cpp] {sources/order/order.cpp}
+    \end{itemize}
+\section{Random Number Generation}
+    \begin{itemize}
+      \item ranges::generate\_random
     \end{itemize}
 \section{Sampling Operations}
     \begin{itemize}
       \item sample
       \item ranges::sample
-    \end{itemize}
-\section{Random Number Generation}
-    \begin{itemize}
-      \item ranges::generate\_random
+        \lstinputlisting[style=cpp] {./sources/sample/sample.cpp}
     \end{itemize}
 \section{Partitioning Operations}
     \begin{itemize}
@@ -215,6 +220,7 @@
       \item ranges::stable\_partition
       \item partition\_point
       \item ranges::partition\_point
+        \lstinputlisting[style=cpp] {sources/partition/partition.cpp}
     \end{itemize}
 \section{Sorting Operations}
     \begin{itemize}
@@ -232,6 +238,7 @@
       \item ranges::is\_sorted\_until
       \item nth\_element
       \item ranges::nth\_element
+        \lstinputlisting[style=cpp] {sources/sort/sort.cpp}
     \end{itemize}
 \section{Binary Search Operations (on partitioned ranges)}
     \begin{itemize}
@@ -243,6 +250,7 @@
       \item ranges::equal\_range
       \item binary\_search
       \item ranges::binary\_search
+        \lstinputlisting[style=cpp] {sources/bst/bst.cpp}
     \end{itemize}
 \section{Set Operation (on sorted ranges)}
     \begin{itemize}
@@ -256,6 +264,7 @@
       \item ranges::set\_difference
       \item set\_symmetric\_difference
       \item ranges::set\_symmetric\_difference
+        \lstinputlisting[style=cpp] {sources/set/set.cpp}
     \end{itemize}
 \section{Merge Operations (on sorted ranges)}
     \begin{itemize}
