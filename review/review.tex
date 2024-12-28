@@ -334,9 +334,11 @@ struct command commands[] = {
         \item \textbf{Transform Operations}
           \begin{itemize}
             \item transform, ranges::transform \\
-              \lstinputlisting[style=cpp] {sources/transform.cpp}
+              \lstinputlisting[style=cpp] {sources/transform/transform.cpp}
             \item replace, replace\_if, ranges::replace, ranges::replace\_if
+              \lstinputlisting[style=cpp] {sources/transform/replace.cpp}
             \item replace\_copy, ranges::replace\_copy, replace\_copy\_if, ranges::replace\_copy\_if
+              \lstinputlisting[style=cpp] {sources/transform/replaceCopy.cpp}
           \end{itemize}
         \item \textbf{Generation Operations}
           \begin{itemize}
@@ -398,8 +400,8 @@ struct command commands[] = {
           \end{itemize}
         \item \textbf{Merge Operations (on sorted ranges)}
           \begin{itemize}
-            \item merge, ranges::merge
-            \item inplace\_merge, ranges::inplace\_merge
+            \item merge, ranges::merge, inplace\_merge, ranges::inplace\_merge
+              \lstinputlisting[style=cpp] {sources/merge/merge.cpp}
           \end{itemize}
         \item \textbf{Heap Operations}
           \begin{itemize}
