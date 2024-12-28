@@ -404,17 +404,22 @@ struct command commands[] = {
         \item \textbf{Heap Operations}
           \begin{itemize}
             \item push\_heap, ranges::push\_heap, pop\_heap, ranges::pop\_heap
-            \item make\_heap, ranges::make\_heap
-            \item sort\_heap, ranges::sort\_heap
-            \item is\_heap, ranges::is\_heap
-            \item is\_heap\_until, ranges::is\_heap\_until
+              \lstinputlisting[style=cpp] {sources/heap/pushPop.cpp}
+            \item make\_heap, ranges::make\_heap, sort\_heap, ranges::sort\_heap
+              \lstinputlisting[style=cpp] {sources/heap/makeHeap.cpp}
+            \item is\_heap, ranges::is\_heap, is\_heap\_until, ranges::is\_heap\_until
+              \lstinputlisting[style=cpp] {sources/heap/isHeap.cpp}
           \end{itemize}
         \item \textbf{Min/Max Operations}
           \begin{itemize}
             \item max, min, ranges::max, ranges::min
+              \lstinputlisting[style=cpp] {sources/minmax/maxMin.cpp}
             \item max\_element, min\_element, ranges::max\_element, ranges::min\_element
+              \lstinputlisting[style=cpp] {sources/minmax/maxElem_minElem.cpp}
             \item minmax, ranges::minmax, minmax\_element, ranges::minmax\_element
+              \lstinputlisting[style=cpp] {sources/minmax/minmax.cpp}
             \item clamp, ranges::clamp
+              \lstinputlisting[style=cpp] {sources/minmax/clamp.cpp}
           \end{itemize}
         \item \textbf{Lexicographical Operations}
           \begin{itemize}
@@ -423,8 +428,9 @@ struct command commands[] = {
           \end{itemize}
         \item \textbf{Permutation Operations}
           \begin{itemize}
-            \item next\_permutation, ranges::next\_permutation, previous\_permutation, ranges::previous\_permutation
-            \item is\_permutation, ranges::is\_permutation
+            \item next\_permutation, ranges::next\_permutation, previous\_permutation, \\
+              ranges::previous\_permutation, is\_permutation, ranges::is\_permutation
+              \lstinputlisting[style=cpp] {sources/permutation/permutation.cpp}
           \end{itemize}
         \item \textbf{Numeric Operations}
           \begin{itemize}
