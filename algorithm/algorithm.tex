@@ -41,10 +41,11 @@
 \tableofcontents
 \newpage
 
+
 \section{batchOperations}
     \begin{itemize}
       \item for\_each
-      \item ranges::for\_each
+      \item ranges::for\_each (Note: does not support execution policies)
       \item for\_each\_n
       \item ranges::for\_each\_n \\
         \lstinputlisting[style=cpp] {sources/foreach.cpp}
@@ -139,7 +140,7 @@
       \item ranges::transform \\
         \lstinputlisting[style=cpp] {sources/transform/transform.cpp}
       \item replace
-      \item replace\_if
+      \item replace\_if TODO: check to see if I can use n (or a lambda) as replacement value
       \item ranges::replace
       \item ranges::replace\_if
         \lstinputlisting[style=cpp] {sources/transform/replace.cpp}
@@ -156,7 +157,7 @@
       \item ranges::fill
       \item ranges::fill\_n
         \lstinputlisting[style=cpp] {sources/generate/fill.cpp}
-      \item generate
+      \item generate TODO: when to use generate vs iota?
       \item generate\_n
       \item ranges::generate
       \item ranges::generate\_n
@@ -164,7 +165,7 @@
     \end{itemize}
 \section{Removing Operations}
     \begin{itemize}
-      \item remove: removes all occurrences of a specified value
+      \item remove: removes all occurrences of a specified value TODO: how to handle updating perceived size when elements are removed?
       \item remove\_if: removes all elements that satisfy a defined condition
       \item ranges::remove
       \item ranges::remove\_if
@@ -309,7 +310,7 @@
       \item minmax\_element
       \item ranges::minmax\_element
         \lstinputlisting[style=cpp] {sources/minmax/minmax.cpp}
-      \item clamp
+      \item clamp TODO: show how it works, not just how to invoke
       \item ranges::clamp
         \lstinputlisting[style=cpp] {sources/minmax/clamp.cpp}
     \end{itemize}
